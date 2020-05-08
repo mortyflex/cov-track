@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Cards, Chart, CountryPicker } from './components';
 
-import './App.css';
+import styles from './App.module.css';
+import fetchData from './api';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>COV-TRACKER APP</h1>
-    </div>
-  );
+export class App extends Component {
+  componentDidMount() {
+    fetchData();
+  }
+
+  render() {
+    return (
+      <div className={styles.container}>
+        <Cards />
+        <CountryPicker />
+        <Chart />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -6,8 +6,17 @@
 }
 
 .image {
-    width: 390px;
+    width: 15%;
     margin-top: 55px;
+}
+
+.title {
+    font-size: 25px;
+    color: #F1F1F1;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 770px) {
@@ -15,7 +24,13 @@
         margin: 0 5%;
     }
 
+    .title {
+        flex-direction: column;
+        font-size: 15px;
+        margin: 0;
+    }
+
     .image {
-        width: 100%;
+        width: 15%;
     }
 }

@@ -7,6 +7,7 @@ import { fetchData } from './api';
 export class App extends Component {
   state = {
     data: {},
+    country: '',
   };
 
   async componentDidMount() {
@@ -14,13 +15,22 @@ export class App extends Component {
     this.setState({ data: fetchedData });
   }
 
+  handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country);
+    console.log(fetchedData);
+    this.setState({ data: fetchedData, country });
+    //fetch data
+    //set state
+  };
+
   render() {
-    const { data } = this.state;
+    const { data, country } = this.state;
     return (
       <div className={styles.container}>
+        <h1>Titsou Tracker</h1>
         <Cards data={data} />
-        <CountryPicker />
-        <Chart />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country} />
       </div>
     );
   }

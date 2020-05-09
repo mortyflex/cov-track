@@ -18,6 +18,7 @@ const CountryPicker = ({ handleCountryChange }) => {
   return (
     <FormControl className={styles.formControl}>
       <NativeSelect
+        style={{ color: '#FFF' }}
         defaultValue=""
         onChange={(e) => handleCountryChange(e.target.value)}
       >

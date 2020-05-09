@@ -28,7 +28,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 start={0}
                 end={confirmed.value}
                 duration={3}
-                separator="."
+                separator=","
               />
             </Typography>
             <Typography color="textSecondary">
